@@ -422,7 +422,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = { ""};
+static const string mainnet_seeds[] = {"dnsseed1.youme.xin", "dnsseed.bitwealth.network", ""};
 static const string testnet_seeds[] = {"testnet-seed.alexykot.me",
                                        "testnet-seed.bitcoin.petertodd.org",
                                        "testnet-seed.bluematt.me",
@@ -432,7 +432,7 @@ static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 7025), true);
+    // db.Add(CService("kjy2eqzk4zwi5zd3.onion", 7025), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
